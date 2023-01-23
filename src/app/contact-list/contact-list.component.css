@@ -1,0 +1,14 @@
+.table{
+    margin: 50px;
+}
+.title{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-top: 50px;
+}
+.hr-decor{
+    width: 20%;
+    border: solid;
+}

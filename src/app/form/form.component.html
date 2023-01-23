@@ -1,0 +1,21 @@
+<h5 class="title">Add Contact </h5>
+<hr class="hr-decor">
+<div class="form-decor" >
+    <form  #postForm="ngForm" >
+        <input type="text" name="id" id="id" class="form-control" ngModel #id="ngModel"required disabled>
+        <label for="name">Name</label><br>
+        <input type="text" class="form-control" name="name" id="name"ngModel #name="ngModel" required>
+        <span class="help-block" *ngIf="!name.valid && name.touched">Please enter the valid value</span>
+        <br>
+        <label for="email">Email</label><br>
+        <input type="email" name="email" id="email" class="form-control" #email="ngModel" ngModel required>
+        <span class="help-block" *ngIf="!email.valid && email.touched">Please enter the valid value</span><br>
+        <label for="contact">Contact</label><br>
+        <input type="text" name="contact" id="contact" class="form-control" ngModel #contact="ngModel"required>
+        <span class="help-block" *ngIf="!contact.valid && contact.touched">Please enter the valid value</span><br>
+        <button type="submit" (click)="onAddContact(postForm.value)"[disabled]="!postForm.valid">Add</button>
+        <button (click)="onUpdate(postForm.value)" [disabled]="!postForm.valid">Update</button>
+    </form>
+
+</div>
+

@@ -1,0 +1,32 @@
+<h5 class="title">Contact List</h5>
+<hr class="hr-decor">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Button</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of loadedData;index as i">
+        <th scope="row" >{{i+1}}</th>
+        <td>{{contact.name}}</td>
+        <td>{{contact.email}}</td>
+        <td>{{contact.contact}}</td>
+        <td>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="onSelected(contact)">view</button>
+            <button class="btn btn-warning" (click)="onEdit(contact)" >Edit</button>
+            <button class="btn btn-danger"(click)="onDelete(contact.id)" >Delete</button>
+        </td>
+   
+      </tr>
+      <div class="alert alert-danger" *ngIf="error">
+        <h1>Error  Occured</h1>
+        <p>{{ error }}</p>
+      </div>
+    </tbody>
+  </table>
+

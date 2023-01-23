@@ -1,0 +1,6 @@
+<app-form></app-form>
+<app-contact-list (contactWasSelected)="selectedContact = $event"></app-contact-list>
+<app-view-contact *ngIf="selectedContact; else infoText" [contact]="selectedContact"></app-view-contact>
+<ng-template #infoText>
+  
+</ng-template>
